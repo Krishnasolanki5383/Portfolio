@@ -70,9 +70,8 @@ const Projects = () => {
               className="project-card glass"
               style={{
                 position: 'sticky',
-                top: `calc(100px + ${index * 20}px)`,
+                top: `calc(100px + ${index * 30}px)`,
                 zIndex: index + 1,
-                marginBottom: index === projects.length - 1 ? '0' : '50vh'
               }}
             >
               <div className="card-top">
@@ -99,7 +98,7 @@ const Projects = () => {
 
       <style>{`
         .projects-section {
-          padding: 8rem 0;
+          padding: 8rem 0 4rem 0;
           position: relative;
         }
 
@@ -118,13 +117,15 @@ const Projects = () => {
           font-size: 1.1rem;
         }
 
-        /* Stacked Projects List Layout */
+        /* Vertical Stacking Slide Show Layout */
         .projects-list {
           display: flex;
           flex-direction: column;
+          gap: 40vh; /* Space between cards to allow scrolling effect */
           max-width: 900px;
           margin: 0 auto;
           position: relative;
+          padding-bottom: 5vh;
         }
 
         /* Card Styling */
@@ -134,12 +135,12 @@ const Projects = () => {
           display: flex;
           flex-direction: column;
           transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          background: rgba(10, 10, 10, 0.95);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border: 1px solid rgba(255,255,255,0.08);
+          box-shadow: 0 -20px 50px -10px rgba(0,0,0,0.6);
           overflow: hidden;
-          background: rgba(10, 10, 10, 0.85);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border: 1px solid rgba(255,255,255,0.05);
-          box-shadow: 0 -10px 30px -10px rgba(0,0,0,0.5);
         }
 
         @media (min-width: 768px) {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Terminal, Github, Linkedin, Mail } from 'lucide-react';
+import { ArrowRight, Terminal, Github, Linkedin, Mail, Youtube, Twitter } from 'lucide-react';
 
 const Hero = () => {
   return (
@@ -31,8 +31,14 @@ const Hero = () => {
           </div>
           
           <div className="hero-socials">
+            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="social-pill glass">
+              <Youtube size={20} />
+            </a>
             <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" className="social-pill glass">
               <Github size={20} />
+            </a>
+            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" className="social-pill glass">
+              <Twitter size={20} />
             </a>
             <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="social-pill glass">
               <Linkedin size={20} />

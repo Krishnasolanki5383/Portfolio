@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, ArrowUp } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowUp, Youtube, Twitter } from 'lucide-react';
 
 const Contact = () => {
   const scrollToTop = () => {
@@ -22,8 +22,14 @@ const Contact = () => {
 
         <div className="contact-footer">
           <div className="social-links">
+            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" aria-label="YouTube">
+              <Youtube size={24} />
+            </a>
             <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" aria-label="GitHub">
               <Github size={24} />
+            </a>
+            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" aria-label="X">
+              <Twitter size={24} />
             </a>
             <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn">
               <Linkedin size={24} />

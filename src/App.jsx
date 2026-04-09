@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
-import Certificates from './components/Certificates';
+import Hackathon from './components/Hackathon';
 import TechStack from './components/TechStack';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
@@ -17,7 +17,7 @@ function App() {
       document.body.style.overflow = 'hidden';
       window.scrollTo(0, 0);
     } else {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   }, [loading]);
 
@@ -33,7 +33,7 @@ function App() {
       <main>
         <Hero />
         <Projects />
-        <Certificates />
+        <Hackathon />
         <TechStack />
         <Contact />
       </main>

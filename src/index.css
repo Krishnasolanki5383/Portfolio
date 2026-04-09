@@ -44,7 +44,7 @@ body {
   background-color: var(--bg-obsidian);
   color: var(--text-primary);
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip instead of hidden fixes position: sticky */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

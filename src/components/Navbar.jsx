@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Mail, Youtube, Twitter } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'glass-nav' : ''}`}>
       <div className="container nav-content">
         <div className="logo">
-          <span className="text-gradient-accent font-bold">KSI.</span>
+          <span className="text-gradient-accent font-bold">Krishna.</span>
         </div>
 
         {/* Desktop Nav */}
@@ -29,8 +29,14 @@ const Navbar = () => {
           <a href="#stack" className="nav-link">Stack</a>
           <div className="nav-divider"></div>
           <div className="social-links">
+            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="social-icon" aria-label="YouTube">
+              <Youtube size={18} />
+            </a>
             <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
               <Github size={18} />
+            </a>
+            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" className="social-icon" aria-label="X">
+              <Twitter size={18} />
             </a>
             <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
               <Linkedin size={18} />
@@ -54,7 +60,9 @@ const Navbar = () => {
           <a href="#projects" className="mobile-link" onClick={toggleMobileMenu}>Projects</a>
           <a href="#stack" className="mobile-link" onClick={toggleMobileMenu}>Stack</a>
           <div className="mobile-socials">
+            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj"><Youtube size={20} /></a>
             <a href="https://github.com/Krishnasolanki5383"><Github size={20} /></a>
+            <a href="https://x.com/Krishna1504__"><Twitter size={20} /></a>
             <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android"><Linkedin size={20} /></a>
             <a href="mailto:ks9522769@gmail.com"><Mail size={20} /></a>
           </div>

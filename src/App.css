@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  overflow-x: clip; /* clip instead of hidden preserves position: sticky */
 }
 
 /* Global ambient glows to tie the theme together */
