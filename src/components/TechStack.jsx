@@ -6,25 +6,41 @@ const TechStack = () => {
     {
       title: "Frontend Engineering",
       icon: <Layout className="text-accent" size={24} />,
-      skills: ["React", "Next.js", "Tailwind CSS"],
+      skills: [
+        { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
+        { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
+        { name: "Redux", icon: "https://cdn.simpleicons.org/redux/764ABC" }
+      ],
       colSpan: "col-span-1 md:col-span-2"
     },
     {
       title: "Backend Services",
       icon: <Server className="text-accent" size={24} />,
-      skills: ["Node.js", "Express"],
+      skills: [
+        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+        { name: "Express", icon: "https://cdn.simpleicons.org/express/white" },
+        { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" }
+      ],
       colSpan: "col-span-1"
     },
     {
       title: "Database & Cloud",
       icon: <Database className="text-accent" size={24} />,
-      skills: ["MongoDB"],
+      skills: [
+        { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+        { name: "Render", icon: "https://cdn.simpleicons.org/render/white" }
+      ],
       colSpan: "col-span-1"
     },
     {
       title: "Tools & DevOps",
       icon: <Terminal className="text-accent" size={24} />,
-      skills: ["Git"],
+      skills: [
+        { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
+        { name: "GitHub", icon: "https://cdn.simpleicons.org/github/white" },
+        { name: "Postman", icon: "https://cdn.simpleicons.org/postman/FF6C37" }
+      ],
       colSpan: "col-span-1 md:col-span-2"
     }
   ];
@@ -50,8 +66,8 @@ const TechStack = () => {
               <ul className="skill-list">
                 {cat.skills.map((skill, sIdx) => (
                   <li key={sIdx} className="skill-item">
-                    <span className="dot"></span>
-                    {skill}
+                    <img src={skill.icon} alt={skill.name} className="skill-logo" loading="lazy" />
+                    <span>{skill.name}</span>
                   </li>
                 ))}
               </ul>
@@ -170,16 +186,18 @@ const TechStack = () => {
           font-size: 0.95rem;
         }
 
-        .dot {
-          width: 6px;
-          height: 6px;
-          border-radius: 50%;
-          background: var(--text-muted);
-          transition: background 0.3s ease;
+        .skill-logo {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+          transition: all 0.3s ease;
+          opacity: 0.9;
+          filter: drop-shadow(0 0 2px rgba(255,255,255,0.1));
         }
 
-        .skill-item:hover .dot {
-          background: var(--accent-violet);
+        .skill-item:hover .skill-logo {
+          transform: scale(1.15);
+          opacity: 1;
         }
 
         .skill-item:hover {
