@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Mail, Youtube, Twitter } from 'lucide-react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('/');
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,21 +16,71 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Track which section is in view and update active state
+  useEffect(() => {
+    const sections = [
+      { id: 'about', path: '/about' },
+      { id: 'projects', path: '/projects' },
+      { id: 'hackathons', path: '/hackathons' },
+      { id: 'stack', path: '/stack' },
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const match = sections.find(s => s.id === entry.target.id);
+            if (match) {
+              setActiveSection(match.path);
+              // Update URL without triggering scroll
+              window.history.replaceState(null, '', match.path);
+            }
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    sections.forEach(({ id }) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Sync active section with route changes from Link clicks
+  useEffect(() => {
+    setActiveSection(location.pathname);
+  }, [location.pathname]);
+
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+
+  const navItems = [
+    { label: 'About', path: '/about' },
+    { label: 'Projects', path: '/projects' },
+    { label: 'Hackathon', path: '/hackathons' },
+    { label: 'Stack', path: '/stack' },
+  ];
 
   return (
     <nav className={`navbar ${isScrolled ? 'glass-nav' : ''}`}>
       <div className="container nav-content">
-        <div className="logo">
+        <Link to="/" className="logo">
           <span className="text-gradient-accent font-bold">Krishna.</span>
-        </div>
+        </Link>
 
         {/* Desktop Nav */}
         <div className="nav-links">
-          <a href="#about" className="nav-link">About</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#education" className="nav-link">Foundation</a>
-          <a href="#stack" className="nav-link">Stack</a>
+          {navItems.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`nav-link ${activeSection === item.path ? 'nav-link-active' : ''}`}
+            >
+              {item.label}
+            </Link>
+          ))}
           <div className="nav-divider"></div>
           <div className="social-links">
             <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="social-icon" aria-label="YouTube">
@@ -57,10 +110,16 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="mobile-menu glass">
-          <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About</a>
-          <a href="#projects" className="mobile-link" onClick={toggleMobileMenu}>Projects</a>
-          <a href="#education" className="mobile-link" onClick={toggleMobileMenu}>Foundation</a>
-          <a href="#stack" className="mobile-link" onClick={toggleMobileMenu}>Stack</a>
+          {navItems.map(item => (
+            <Link
+              key={item.path}
+              to={item.path}
+              className={`mobile-link ${activeSection === item.path ? 'nav-link-active' : ''}`}
+              onClick={toggleMobileMenu}
+            >
+              {item.label}
+            </Link>
+          ))}
           <div className="mobile-socials">
             <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj"><Youtube size={20} /></a>
             <a href="https://github.com/Krishnasolanki5383"><Github size={20} /></a>
@@ -96,6 +155,8 @@ const Navbar = () => {
           font-size: 1.5rem;
           font-weight: 700;
           letter-spacing: -0.05em;
+          text-decoration: none;
+          cursor: pointer;
         }
 
         .nav-links {
@@ -120,6 +181,10 @@ const Navbar = () => {
 
         .nav-link:hover {
           color: var(--text-primary);
+        }
+
+        .nav-link-active {
+          color: var(--accent-neon-blue) !important;
         }
 
         .nav-divider {
@@ -203,3 +268,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+

@@ -98,6 +98,7 @@ const TechStack = () => {
       title: "Frontend Engineering",
       icon: <Layout className="text-secondary-accent" size={24} />,
       skills: [
+        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
         { name: "React", icon: "https://cdn.simpleicons.org/react/61DAFB" },
         { name: "Next.js", icon: "https://cdn.simpleicons.org/nextdotjs/white" },
         { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/06B6D4" },
@@ -110,9 +111,10 @@ const TechStack = () => {
       title: "Backend Services",
       icon: <Server className="text-secondary-accent" size={24} />,
       skills: [
+        { name: "C", icon: "https://cdn.simpleicons.org/c/A8B9CC" },
+        { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
         { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
-        { name: "Express", icon: "https://cdn.simpleicons.org/express/white" },
-        { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" }
+        { name: "Express", icon: "https://cdn.simpleicons.org/express/white" }
       ],
       colSpan: "col-span-1",
       accentColor: "rgba(51, 153, 51, 0.15)",
