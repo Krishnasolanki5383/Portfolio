@@ -280,7 +280,7 @@ const Projects = () => {
       title: 'PRACTO',
       description: 'A dedicated platform for booking and managing doctor appointments with ease.',
       tech: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-      links: { github: '#', live: 'https://illustrious-bonbon-b2a4dd.netlify.app/', youtube: '#' },
+      links: { github: 'https://github.com/Krishnasolanki5383/ASM6', live: 'https://illustrious-bonbon-b2a4dd.netlify.app/', youtube: 'https://youtu.be/iG_DeVgi8vk' },
       image: 'https://i.ibb.co/9mbrvRDz/Screenshot-2026-03-18-003123.png',
     },
     {
@@ -288,7 +288,7 @@ const Projects = () => {
       title: 'HARIO',
       description: 'A corporate web presence designed for a premier Japanese glass-making company.',
       tech: ['Next.js', 'Python', 'Tailwind'],
-      links: { github: '#', live: 'https://charming-vacherin-c87cc3.netlify.app/', youtube: '#' },
+      links: { github: 'https://github.com/Krishnasolanki5383/ASM4', live: 'https://charming-vacherin-c87cc3.netlify.app/', youtube: 'https://youtu.be/VJaul0uhjEY' },
       image: 'https://i.ibb.co/4nzZ0zWP/Screenshot-2026-03-18-004201.png',
     },
     {
@@ -296,7 +296,7 @@ const Projects = () => {
       title: 'LIQUID DEATH',
       description: 'An edgy and bold promotional front-end for a high-intensity energy drink brand.',
       tech: ['Socket.io', 'React', 'Express'],
-      links: { github: '#', live: 'https://deft-frangipane-01e606.netlify.app/', youtube: '#' },
+      links: { github: 'https://github.com/Krishnasolanki5383/ASM3', live: 'https://deft-frangipane-01e606.netlify.app/', youtube: 'https://youtu.be/_gtIeCEdq4Y' },
       image: 'https://i.ibb.co/0V8PHzmp/Screenshot-2026-03-18-004530.png',
     },
     {
@@ -304,7 +304,7 @@ const Projects = () => {
       title: 'WIX',
       description: 'A supportive and informative resource platform built specifically for pregnant women.',
       tech: ['Vue.js', 'Docker', 'Go'],
-      links: { github: '#', live: 'https://www.wix.com/website-template/view/html/2573', youtube: '#' },
+      links: { github: 'https://github.com/Krishnasolanki5383/Diwali-A2', live: 'https://www.wix.com/website-template/view/html/2573', youtube: 'https://youtu.be/xOiM0wMpQuk' },
       image: 'https://i.ibb.co/355mbC4D/Screenshot-2026-03-18-004754.png',
     },
     {
@@ -312,7 +312,7 @@ const Projects = () => {
       title: 'Micromax',
       description: 'A modern e-commerce platform and official storefront for a leading mobile phone company.',
       tech: ['React', 'JavaScript', 'CSS'],
-      links: { github: '#', live: 'https://bright-nougat-d02539.netlify.app/', youtube: '#' },
+      links: { github: 'https://github.com/Krishnasolanki5383/Micromax-clone', live: 'https://bright-nougat-d02539.netlify.app/', youtube: 'https://youtu.be/zdemZ_WcXgU' },
       image: 'https://i.ibb.co/cc9L7f1Y/Screenshot-2026-03-18-005803.png',
     }
   ];
