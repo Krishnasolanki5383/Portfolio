@@ -26,6 +26,7 @@ const Navbar = () => {
         <div className="nav-links">
           <a href="#about" className="nav-link">About</a>
           <a href="#projects" className="nav-link">Projects</a>
+          <a href="#education" className="nav-link">Foundation</a>
           <a href="#stack" className="nav-link">Stack</a>
           <div className="nav-divider"></div>
           <div className="social-links">
@@ -58,6 +59,7 @@ const Navbar = () => {
         <div className="mobile-menu glass">
           <a href="#about" className="mobile-link" onClick={toggleMobileMenu}>About</a>
           <a href="#projects" className="mobile-link" onClick={toggleMobileMenu}>Projects</a>
+          <a href="#education" className="mobile-link" onClick={toggleMobileMenu}>Foundation</a>
           <a href="#stack" className="mobile-link" onClick={toggleMobileMenu}>Stack</a>
           <div className="mobile-socials">
             <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj"><Youtube size={20} /></a>
