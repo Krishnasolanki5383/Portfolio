@@ -1,5 +1,6 @@
 import React from 'react';
 import { Github, Linkedin, Mail, ArrowUp, Youtube, Twitter } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Contact = () => {
   const scrollToTop = () => {
@@ -9,47 +10,75 @@ const Contact = () => {
   return (
     <footer id="contact" className="contact-section">
       <div className="container contact-container">
-        <div className="contact-content">
+        <motion.div 
+          className="contact-content"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="section-title">Let's <span className="text-gradient">Connect</span></h2>
           <p className="contact-subtitle">
             I'm currently looking for new opportunities. Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
           
-          <a href="mailto:ks9522769@gmail.com" className="email-button glass">
-            <Mail size={20} /> Say Hello
-          </a>
-        </div>
+          <motion.a 
+            href="mailto:ks9522769@gmail.com" 
+            className="email-button glass"
+            whileHover={{ scale: 1.05, boxShadow: "0 15px 40px rgba(0, 240, 255, 0.2)" }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Mail size={22} /> Say Hello
+          </motion.a>
+        </motion.div>
 
         <div className="contact-footer">
-          <div className="social-links">
-            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" aria-label="YouTube">
-              <Youtube size={24} />
-            </a>
-            <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" aria-label="GitHub">
-              <Github size={24} />
-            </a>
-            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" aria-label="X">
-              <Twitter size={24} />
-            </a>
-            <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" aria-label="LinkedIn">
-              <Linkedin size={24} />
-            </a>
-          </div>
+          <motion.div 
+            className="social-links"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {[
+              { icon: <Youtube size={26} />, url: "https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj", label: "YouTube" },
+              { icon: <Github size={26} />, url: "https://github.com/Krishnasolanki5383", label: "GitHub" },
+              { icon: <Twitter size={26} />, url: "https://x.com/Krishna1504__", label: "X" },
+              { icon: <Linkedin size={26} />, url: "https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android", label: "LinkedIn" }
+            ].map((social, i) => (
+              <motion.a 
+                key={i}
+                href={social.url} 
+                target="_blank" 
+                rel="noreferrer" 
+                aria-label={social.label}
+                whileHover={{ y: -5, color: "#00f0ff" }}
+              >
+                {social.icon}
+              </motion.a>
+            ))}
+          </motion.div>
 
           <div className="footer-bottom">
             <p className="copyright">© {new Date().getFullYear()} Krishna Solanki. Designed & Built with 💚.</p>
-            <button onClick={scrollToTop} className="scroll-top-btn" aria-label="Scroll to top">
-              <ArrowUp size={20} />
-            </button>
+            <motion.button 
+              onClick={scrollToTop} 
+              className="scroll-top-btn" 
+              aria-label="Scroll to top"
+              whileHover={{ y: -5, backgroundColor: "rgba(255, 255, 255, 0.15)" }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <ArrowUp size={22} />
+            </motion.button>
           </div>
         </div>
       </div>
 
       <style>{`
         .contact-section {
-          padding: 8rem 0 2rem;
+          padding: 10rem 0 3rem;
           position: relative;
-          background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 0.8));
+          background: linear-gradient(to bottom, transparent, rgba(10, 10, 10, 1));
           border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -61,45 +90,43 @@ const Contact = () => {
 
         .contact-content {
           text-align: center;
-          max-width: 600px;
-          margin: 0 auto 5rem;
+          max-width: 700px;
+          margin: 0 auto 6rem;
         }
 
         .section-title {
-          font-size: clamp(2.5rem, 5vw, 4rem);
-          font-weight: 700;
+          font-size: clamp(3rem, 6vw, 5rem);
+          font-weight: 800;
           margin-bottom: 1.5rem;
         }
 
         .contact-subtitle {
           color: var(--text-secondary);
-          font-size: 1.15rem;
-          line-height: 1.6;
-          margin-bottom: 2.5rem;
+          font-size: 1.25rem;
+          line-height: 1.8;
+          margin-bottom: 3.5rem;
         }
 
         .email-button {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          gap: 0.75rem;
-          padding: 1rem 2.5rem;
-          border-radius: 12px;
-          font-size: 1.1rem;
-          font-weight: 600;
+          gap: 1rem;
+          padding: 1.25rem 3.5rem;
+          border-radius: 16px;
+          font-size: 1.25rem;
+          font-weight: 700;
           color: var(--text-primary);
           text-decoration: none;
-          transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+          transition: all 0.3s ease;
           border: 1px solid rgba(255, 255, 255, 0.1);
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
+          background: rgba(255, 255, 255, 0.05);
+          backdrop-filter: blur(20px);
         }
 
         .email-button:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 10px 25px rgba(0, 240, 255, 0.15);
-          border-color: rgba(255, 255, 255, 0.2);
-          background: rgba(255, 255, 255, 0.05);
+          border-color: rgba(0, 240, 255, 0.5);
+          background: rgba(0, 240, 255, 0.05);
         }
 
         .contact-footer {
@@ -107,24 +134,19 @@ const Contact = () => {
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 2rem;
-          border-top: 1px solid var(--border-subtle);
-          padding-top: 2rem;
+          gap: 3rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          padding-top: 3rem;
         }
 
         .social-links {
           display: flex;
-          gap: 1.5rem;
+          gap: 2.5rem;
         }
 
         .social-links a {
           color: var(--text-secondary);
-          transition: all 0.2s ease;
-        }
-
-        .social-links a:hover {
-          color: var(--accent-neon-blue);
-          transform: translateY(-2px);
+          transition: color 0.3s ease;
         }
 
         .footer-bottom {
@@ -133,39 +155,34 @@ const Contact = () => {
           justify-content: space-between;
           align-items: center;
           flex-wrap: wrap;
-          gap: 1rem;
+          gap: 1.5rem;
+          margin-top: 2rem;
         }
 
         .copyright {
           color: var(--text-muted);
-          font-size: 0.9rem;
+          font-size: 1rem;
+          letter-spacing: 0.02em;
         }
 
         .scroll-top-btn {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           background: rgba(255, 255, 255, 0.05);
-          border: 1px solid var(--border-subtle);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           color: var(--text-secondary);
           cursor: pointer;
           transition: all 0.3s ease;
         }
 
-        .scroll-top-btn:hover {
-          background: rgba(255, 255, 255, 0.1);
-          color: var(--text-primary);
-          transform: translateY(-3px);
-        }
-
         @media (max-width: 576px) {
           .footer-bottom {
-            flex-direction: column;
-            text-align: center;
             flex-direction: column-reverse;
+            text-align: center;
           }
         }
       `}</style>
@@ -174,3 +191,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

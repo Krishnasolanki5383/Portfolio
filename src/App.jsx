@@ -4,8 +4,10 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import Hackathon from './components/Hackathon';
 import TechStack from './components/TechStack';
+import Education from './components/Education';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
+import CustomCursor from './components/CustomCursor';
 import './App.css';
 
 function App() {
@@ -23,6 +25,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
+      <CustomCursor />
       {loading && <Preloader onComplete={() => setLoading(false)} />}
       
       <div className="ambient-glow-top"></div>
@@ -35,6 +38,7 @@ function App() {
         <Projects />
         <Hackathon />
         <TechStack />
+        <Education />
         <Contact />
       </main>
     </div>
