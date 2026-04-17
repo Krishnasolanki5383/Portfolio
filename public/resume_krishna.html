@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Krishna Solanki — Resume</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #e8e8e8;
+    color: #111;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+  .page {
+    max-width: 860px;
+    margin: 32px auto;
+    background: #fff;
+    border: 1px solid #bbb;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    min-height: 1100px;
+  }
+
+  /* LEFT SIDEBAR — black */
+  .sidebar {
+    background: #111;
+    color: #e0e0e0;
+    padding: 36px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .name-block h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .name-block .title {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #aaa;
+    font-weight: 500;
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: #fff;
+    margin: 4px 0 0;
+  }
+
+  .sidebar-section h3 {
+    font-size: 10px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #bbb;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #333;
+  }
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 8px;
+    font-size: 12px;
+    color: #ccc;
+    word-break: break-all;
+  }
+
+  .contact-item .icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    opacity: 0.65;
+  }
+
+  .contact-item a {
+    color: #ccc;
+    text-decoration: none;
+  }
+
+  .contact-item a:hover { color: #fff; }
+
+  .skill-group-label {
+    font-size: 11px;
+    color: #999;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .skill-tag {
+    background: #222;
+    color: #ccc;
+    font-size: 11px;
+    padding: 3px 9px;
+    border-radius: 2px;
+    border: 1px solid #444;
+  }
+
+  .edu-item {
+    margin-bottom: 14px;
+  }
+
+  .edu-item .degree {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #e8e8e8;
+    margin-bottom: 2px;
+  }
+
+  .edu-item .school {
+    font-size: 12px;
+    color: #999;
+  }
+
+  .edu-item .year {
+    font-size: 11px;
+    color: #777;
+    margin-top: 2px;
+  }
+
+  /* RIGHT MAIN CONTENT */
+  .main {
+    padding: 36px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    background: #fff;
+  }
+
+  .main-section h2 {
+    font-size: 11px;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 600;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #111;
+    margin-bottom: 14px;
+  }
+
+  /* Summary */
+  .summary-text {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.65;
+  }
+
+  /* Projects */
+  .project-card {
+    margin-bottom: 16px;
+    padding-left: 14px;
+    border-left: 3px solid #111;
+  }
+
+  .project-card .proj-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 3px;
+  }
+
+  .project-card .proj-desc {
+    font-size: 12px;
+    color: #555;
+    margin-bottom: 5px;
+    line-height: 1.5;
+  }
+
+  .proj-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 6px;
+  }
+
+  .proj-tech span {
+    background: #f2f2f2;
+    color: #333;
+    font-size: 10.5px;
+    padding: 2px 7px;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+  }
+
+  .proj-link a {
+    font-size: 11px;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #888;
+    padding-bottom: 1px;
+    margin-right: 10px;
+  }
+
+  .proj-link a:hover { color: #555; }
+
+  /* Certifications */
+  .cert-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 12.5px;
+  }
+
+  .cert-item:last-child { border-bottom: none; }
+
+  .cert-name { color: #111; font-weight: 500; }
+  .cert-badge a {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #111;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid #111;
+    padding: 2px 7px;
+    border-radius: 2px;
+  }
+  .cert-badge a:hover { background: #111; color: #fff; }
+
+  /* Achievements */
+  .hackathon-item {
+    margin-bottom: 14px;
+    padding-left: 14px;
+    border-left: 3px solid #888;
+  }
+
+  .hackathon-item .hack-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #111;
+    margin-bottom: 2px;
+  }
+
+  .hackathon-item .hack-detail {
+    font-size: 12px;
+    color: #666;
+  }
+
+  .hackathon-item .hack-badge {
+    display: inline-block;
+    margin-top: 4px;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: #111;
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .page { margin: 0; border: none; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="name-block">
+      <h1>Krishna<br/>Solanki</h1>
+      <div class="divider"></div>
+      <p class="title">Full-Stack Developer</p>
+    </div>
+
+    <!-- Contact -->
+    <div class="sidebar-section">
+      <h3>Contact</h3>
+
+      <div class="contact-item">
+        <!-- Phone -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8 19.79 19.79 0 01.12 3.18 2 2 0 012.11 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.28 8.72a16 16 0 006 6l1.08-1.08a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 15.92z"/></svg>
+        7067723238
+      </div>
+
+      <div class="contact-item">
+        <!-- Email -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:krishna.solanki.cg@gmail.com">krishna.solanki.cg<br/>@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- Location -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ahmedabad, India
+      </div>
+
+      <div class="contact-item">
+        <!-- LinkedIn -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <a href="https://www.linkedin.com/in/krishna-solanki-55478839a" target="_blank">LinkedIn Profile</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- GitHub -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        <a href="https://github.com/Krishnasolanki5383" target="_blank">Krishnasolanki5383</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- Portfolio -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        <a href="https://krishnasolankiportfolio.netlify.app/" target="_blank">Portfolio Site</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- LeetCode -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+        <a href="https://leetcode.com/settings/profile/" target="_blank">LeetCode Profile</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- X / Twitter -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M4 20L20 4"/></svg>
+        <a href="https://x.com/Krishna1504__" target="_blank">@Krishna1504__</a>
+      </div>
+
+      <div class="contact-item">
+        <!-- YouTube -->
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+        <a href="https://www.youtube.com/@krishnaKsolanki" target="_blank">YouTube Channel</a>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="sidebar-section">
+      <h3>Skills</h3>
+      <div class="skill-group-label">Languages</div>
+      <div class="skill-tags">
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">JavaScript</span>
+      </div>
+      <div class="skill-group-label">Frontend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">React.js</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+      </div>
+      <div class="skill-group-label">Backend</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express.js</span>
+      </div>
+      <div class="skill-group-label">Database</div>
+      <div class="skill-tags">
+        <span class="skill-tag">MongoDB</span>
+      </div>
+      <div class="skill-group-label">Tools</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Postman</span>
+        <span class="skill-tag">Netlify</span>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sidebar-section">
+      <h3>Education</h3>
+
+      <div class="edu-item">
+        <div class="degree">B.E. — Computer Engineering</div>
+        <div class="school">Swaminarayan University, Kalol</div>
+        <div class="year">2025 — 2029</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="degree">12th (Higher Secondary)</div>
+        <div class="school">Sardar Patel School, Biaora</div>
+        <div class="year">2022 — 2024</div>
+      </div>
+
+      <div class="edu-item">
+        <div class="degree">10th (Secondary)</div>
+        <div class="school">Jyoti Convent School, Biaora</div>
+        <div class="year">Up to 2022</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- Summary -->
+    <div class="main-section">
+      <h2>About Me</h2>
+      <p class="summary-text">
+        Passionate Full-Stack Developer currently pursuing B.E. in Computer Engineering at Swaminarayan University, Kalol. I build end-to-end web applications using the MERN stack — React.js on the frontend, Node.js &amp; Express.js on the backend, and MongoDB for data storage. I enjoy turning ideas into live, production-ready products and have independently designed, developed, and deployed multiple full-stack projects. Always curious, always building.
+      </p>
+    </div>
+
+    <!-- Projects -->
+    <div class="main-section">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <div class="proj-title">E-Commerce / Shopping Platform</div>
+        <div class="proj-desc">A full-stack e-commerce web application with product listings, cart management, and a smooth, responsive user experience built with modern technologies.</div>
+        <div class="proj-tech">
+          <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Tailwind CSS</span>
+        </div>
+        <div class="proj-link">
+          <a href="https://illustrious-bonbon-b2a4dd.netlify.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-title">Portfolio / Showcase App</div>
+        <div class="proj-desc">An interactive personal project showcase with dynamic content rendering, fetching and displaying multiple datasets with search and filtering functionality.</div>
+        <div class="proj-tech">
+          <span>React.js</span><span>Tailwind CSS</span><span>REST APIs</span><span>Netlify</span>
+        </div>
+        <div class="proj-link">
+          <a href="https://charming-vacherin-c87cc3.netlify.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="proj-title">Full-Stack Web Application</div>
+        <div class="proj-desc">A responsive full-stack web application featuring backend REST APIs, database integration, and a polished frontend interface with real-time data management.</div>
+        <div class="proj-tech">
+          <span>React.js</span><span>Node.js</span><span>Express.js</span><span>MongoDB</span><span>Postman</span>
+        </div>
+        <div class="proj-link">
+          <a href="https://deft-frangipane-01e606.netlify.app/" target="_blank">Live Demo</a>
+          <a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Certifications -->
+    <div class="main-section">
+      <h2>Certifications</h2>
+
+      <div class="cert-item">
+        <span class="cert-name">Full-Stack Web Development</span>
+        <span class="cert-badge"><a href="https://drive.google.com/file/d/1AsZxm6et3FChmYGr4rKZtMDPEAUCpOFl/view?usp=sharing" target="_blank">View Certificate</a></span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">React.js — Frontend Development</span>
+        <span class="cert-badge"><a href="https://drive.google.com/file/d/1eg5LKNgWeXmFraKpALUxT7BAztCGh0Qq/view?usp=sharing" target="_blank">View Certificate</a></span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">Node.js &amp; Express Backend</span>
+        <span class="cert-badge"><a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a></span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">JavaScript (ES6+) Fundamentals</span>
+        <span class="cert-badge"><a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a></span>
+      </div>
+      <div class="cert-item">
+        <span class="cert-name">MongoDB Database Design</span>
+        <span class="cert-badge"><a href="https://github.com/Krishnasolanki5383" target="_blank">GitHub</a></span>
+      </div>
+    </div>
+
+    <!-- Hackathons & Achievements -->
+    <div class="main-section">
+      <h2>Hackathons &amp; Achievements</h2>
+
+      <div class="hackathon-item">
+        <div class="hack-title">Open Source Contributor</div>
+        <div class="hack-detail">Actively contributing to open source projects on GitHub — building features, fixing bugs, and collaborating with developer communities.</div>
+        <span class="hack-badge">Active</span>
+      </div>
+
+      <div class="hackathon-item">
+        <div class="hack-title">Full-Stack Project Builder</div>
+        <div class="hack-detail">Independently designed, built, and deployed multiple full-stack projects from scratch — covering frontend, backend, database, and cloud deployment.</div>
+        <span class="hack-badge">Self-Driven</span>
+      </div>
+
+      <div class="hackathon-item">
+        <div class="hack-title">Live Deployment Portfolio</div>
+        <div class="hack-detail">Successfully deployed 3+ live production-grade web applications on Netlify, demonstrating end-to-end development skills from ideation to deployment.</div>
+        <span class="hack-badge">Deployed</span>
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

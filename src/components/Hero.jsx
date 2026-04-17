@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Terminal, Github, Linkedin, Mail, Youtube, Twitter } from 'lucide-react';
+import { ArrowRight, FileText, Github, Linkedin, Mail, Youtube, Twitter } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const Hero = () => {
@@ -20,7 +20,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="hero-section" id="about">
+    <section className="hero-section">
       <div className="container hero-container">
         
         {/* Left Content */}
@@ -47,26 +47,36 @@ const Hero = () => {
             <a href="#projects" className="btn btn-primary">
               View Work <ArrowRight size={18} />
             </a>
-            <a href="#stack" className="btn btn-secondary glass">
-              <Terminal size={18} /> Tech Stack
+            <a 
+              href="https://drive.google.com/file/d/1a2yE6BzKJn9YA0MJP8x3e1EyqKEdCi2O/view?usp=sharing" 
+              target="_blank" 
+              rel="noreferrer" 
+              className="btn btn-secondary glass"
+            >
+              <FileText size={18} /> View Resume
             </a>
           </motion.div>
-          
-          <motion.div variants={itemVariants} className="hero-socials">
-            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="social-pill glass">
+
+          <motion.div variants={itemVariants} className="hero-socials-row">
+            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="hero-social-link glass" title="YouTube">
               <Youtube size={20} />
             </a>
-            <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" className="social-pill glass">
+            <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" className="hero-social-link glass" title="GitHub">
               <Github size={20} />
             </a>
-            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" className="social-pill glass">
+            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" className="hero-social-link glass" title="X (Twitter)">
               <Twitter size={20} />
             </a>
-            <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="social-pill glass">
+            <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="hero-social-link glass" title="LinkedIn">
               <Linkedin size={20} />
             </a>
-            <a href="mailto:ks9522769@gmail.com" className="social-pill glass">
+            <a href="mailto:ks9522769@gmail.com" className="hero-social-link glass" title="Email">
               <Mail size={20} />
+            </a>
+            <a href="https://leetcode.com/settings/profile/" target="_blank" rel="noreferrer" className="hero-social-link glass" title="LeetCode">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.483 0a1.374 1.374 0 0 0-.961.414l-1.905 1.959 1.545 1.59 1.144-1.171 7.23 7.423a.754.754 0 0 1 0 1.055l-1.037 1.066h2.15l1.391-1.428a2.536 2.536 0 0 0 0-3.51L14.484.414a1.36 1.36 0 0 0-.96-.414ZM8.598 4.211a1.2 1.2 0 0 0-.916.421L.365 11.2a2.38 2.38 0 0 0 0 3.336L7.683 21.8a2.3 2.3 0 0 0 3.254 0l11.66-11.972a.75.75 0 0 0-1.077-1.042l-11.66 11.972a.803.803 0 0 1-1.127 0L2.449 13.492a.855.855 0 0 1 0-1.229L8.85 5.92a.258.258 0 0 1 .378 0l1.528 1.565 1.525-1.571-1.528-1.565a1.2 1.2 0 0 0-.825-.338Z"/>
+              </svg>
             </a>
           </motion.div>
         </motion.div>
@@ -165,32 +175,41 @@ const Hero = () => {
           font-size: clamp(1.1rem, 2vw, 1.4rem);
           color: var(--text-secondary);
           max-width: 550px;
-          margin-bottom: 3.5rem;
+          margin-bottom: 2rem;
           line-height: 1.8;
         }
 
-        /* Buttons */
         .hero-actions {
           display: flex;
           flex-wrap: wrap;
           gap: 1.5rem;
-          margin-bottom: 2.5rem;
+          margin-bottom: 1.5rem;
         }
 
-        .hero-socials {
+        .hero-socials-row {
           display: flex;
-          gap: 1.25rem;
+          gap: 1rem;
+          margin-top: 0.5rem;
         }
 
-        .social-pill {
+        .hero-social-link {
           display: flex;
           align-items: center;
           justify-content: center;
-          width: 48px;
-          height: 48px;
-          border-radius: 50%;
+          width: 44px;
+          height: 44px;
+          border-radius: 12px;
           color: var(--text-secondary);
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+          text-decoration: none;
+        }
+
+        .hero-social-link:hover {
+          color: var(--accent-neon-blue);
+          transform: translateY(-4px) scale(1.1);
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--accent-neon-blue);
+          box-shadow: 0 8px 16px rgba(0, 240, 255, 0.2);
         }
 
         .social-pill:hover {
@@ -299,7 +318,7 @@ const Hero = () => {
             flex-direction: column;
             align-items: center;
           }
-          .hero-actions, .hero-socials {
+          .hero-actions, .hero-socials-row {
             justify-content: center;
           }
           .hero-art {

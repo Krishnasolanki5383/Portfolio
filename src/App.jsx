@@ -8,16 +8,17 @@ import TechStack from './components/TechStack';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Preloader from './components/Preloader';
+import SpecialMomentsModal from './components/SpecialMomentsModal';
 import CustomCursor from './components/CustomCursor';
 import './App.css';
 
 // Maps route paths to section IDs
 const sectionMap = {
-  '/about': 'about',
   '/projects': 'projects',
   '/education': 'education',
   '/stack': 'stack',
   '/hackathons': 'hackathons',
+  '/certificates': 'certificates',
   '/contact': 'contact',
 };
 
@@ -45,6 +46,13 @@ const ScrollToSection = () => {
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [showMoments, setShowMoments] = useState(false);
+
+  // Trigger Special Moments after Preloader finishes
+  const handlePreloaderComplete = () => {
+    setLoading(false);
+    setShowMoments(true);
+  };
 
   // Prevent scrolling while preloader is active
   useEffect(() => {
@@ -59,7 +67,12 @@ function App() {
   return (
     <div className="app-wrapper">
       <CustomCursor />
-      {loading && <Preloader onComplete={() => setLoading(false)} />}
+      {loading && <Preloader onComplete={handlePreloaderComplete} />}
+      
+      <SpecialMomentsModal 
+        isOpen={showMoments} 
+        onClose={() => setShowMoments(false)} 
+      />
       
       <div className="ambient-glow-top"></div>
       <div className="ambient-glow-bottom"></div>
@@ -80,11 +93,11 @@ function App() {
       {/* Define routes so react-router recognizes clean paths */}
       <Routes>
         <Route path="/" element={null} />
-        <Route path="/about" element={null} />
         <Route path="/projects" element={null} />
         <Route path="/education" element={null} />
         <Route path="/stack" element={null} />
         <Route path="/hackathons" element={null} />
+        <Route path="/certificates" element={null} />
         <Route path="/contact" element={null} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>

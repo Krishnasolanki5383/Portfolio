@@ -73,7 +73,7 @@ const CustomCursor = () => {
           background-color: var(--accent-neon-blue);
           border-radius: 50%;
           pointer-events: none;
-          z-index: 9999;
+          z-index: 999999;
           mix-blend-mode: difference;
         }
 
@@ -86,7 +86,7 @@ const CustomCursor = () => {
           border-radius: 50%;
           border: 1px solid rgba(255, 255, 255, 0.3);
           pointer-events: none;
-          z-index: 9998;
+          z-index: 999998;
           transition: border-width 0.2s ease;
         }
 

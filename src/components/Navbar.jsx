@@ -23,6 +23,8 @@ const Navbar = () => {
       { id: 'projects', path: '/projects' },
       { id: 'hackathons', path: '/hackathons' },
       { id: 'stack', path: '/stack' },
+      { id: 'education', path: '/education' },
+      { id: 'contact', path: '/contact' },
     ];
 
     const observer = new IntersectionObserver(
@@ -57,10 +59,11 @@ const Navbar = () => {
   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
 
   const navItems = [
-    { label: 'About', path: '/about' },
     { label: 'Projects', path: '/projects' },
     { label: 'Hackathon', path: '/hackathons' },
     { label: 'Stack', path: '/stack' },
+    { label: 'Education', path: '/education' },
+    { label: 'Contact', path: '/contact' },
   ];
 
   return (
@@ -81,24 +84,6 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <div className="nav-divider"></div>
-          <div className="social-links">
-            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj" target="_blank" rel="noreferrer" className="social-icon" aria-label="YouTube">
-              <Youtube size={18} />
-            </a>
-            <a href="https://github.com/Krishnasolanki5383" target="_blank" rel="noreferrer" className="social-icon" aria-label="GitHub">
-              <Github size={18} />
-            </a>
-            <a href="https://x.com/Krishna1504__" target="_blank" rel="noreferrer" className="social-icon" aria-label="X">
-              <Twitter size={18} />
-            </a>
-            <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noreferrer" className="social-icon" aria-label="LinkedIn">
-              <Linkedin size={18} />
-            </a>
-            <a href="mailto:ks9522769@gmail.com" className="social-icon" aria-label="Email">
-              <Mail size={18} />
-            </a>
-          </div>
         </div>
 
         {/* Mobile Toggle */}
@@ -120,13 +105,6 @@ const Navbar = () => {
               {item.label}
             </Link>
           ))}
-          <div className="mobile-socials">
-            <a href="https://youtube.com/@impure4one?si=3EKJdkot-tDK4PHj"><Youtube size={20} /></a>
-            <a href="https://github.com/Krishnasolanki5383"><Github size={20} /></a>
-            <a href="https://x.com/Krishna1504__"><Twitter size={20} /></a>
-            <a href="https://www.linkedin.com/in/krishna-solanki-55478839a?utm_source=share_via&utm_content=profile&utm_medium=member_android"><Linkedin size={20} /></a>
-            <a href="mailto:ks9522769@gmail.com"><Mail size={20} /></a>
-          </div>
         </div>
       )}
 
