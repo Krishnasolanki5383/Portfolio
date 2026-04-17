@@ -36,6 +36,14 @@ const SpecialMomentsModal = ({ isOpen, onClose }) => {
     }
   ];
 
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === moments.length - 1 ? 0 : prev + 1));
+  };
+
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? moments.length - 1 : prev - 1));
+  };
+
   // Auto-rotation logic
   useEffect(() => {
     if (!isOpen) return;
@@ -100,6 +108,13 @@ const SpecialMomentsModal = ({ isOpen, onClose }) => {
                     </motion.div>
                   </AnimatePresence>
                   
+                  <button className="media-nav-btn left-nav" onClick={handlePrev}>
+                    <ChevronLeft size={24} />
+                  </button>
+                  <button className="media-nav-btn right-nav" onClick={handleNext}>
+                    <ChevronRight size={24} />
+                  </button>
+
                   <div className="bento-counter">
                     {currentIndex + 1} / {moments.length}
                   </div>
@@ -231,6 +246,32 @@ const SpecialMomentsModal = ({ isOpen, onClose }) => {
             align-items: center;
             justify-content: center;
           }
+
+          .media-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s;
+          }
+
+          .media-nav-btn:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-50%) scale(1.1);
+          }
+
+          .left-nav { left: 10px; }
+          .right-nav { right: 10px; }
 
           .bento-media-track {
             width: 100%;
