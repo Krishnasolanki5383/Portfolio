@@ -1,7 +1,3 @@
 User-agent: *
-Allow:/
-Allow:/about
-Allow: /dashboard
-Disallow: /projects
-
-Sitemap:https://krishnasolankiportfolio.netlify.app/Sitemap.xml
+Allow: /
+Sitemap: https://krishnasolankiportfolio.netlify.app/sitemap.xml
