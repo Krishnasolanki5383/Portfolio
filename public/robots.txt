@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://krishnasolankiportfolio.netlify.app/sitemap.xml
+Sitemap: https://krishna-solanki-portfolio.vercel.app/sitemap.xml
