@@ -70,7 +70,7 @@ const Navbar = () => {
     <nav className={`navbar ${isScrolled ? 'glass-nav' : ''}`}>
       <div className="container nav-content">
         <Link to="/" className="logo">
-          <span className="text-gradient-accent font-bold">Krishna.</span>
+          <span className="text-gradient-accent font-bold" style={{ fontSize: '1.8rem' }}>KS.</span>
         </Link>
 
         {/* Desktop Nav */}

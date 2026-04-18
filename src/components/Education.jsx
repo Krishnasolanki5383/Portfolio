@@ -8,6 +8,7 @@ const educationData = [
     institution: "Swaminarayan University",
     degree: "B.E. Computer Engineering",
     description: "Focusing on core CS concepts, algorithm design, data structures, and architecting scalable web applications.",
+    marks: "Current CGPA: 8.14",
     icon: <GraduationCap size={24} />,
     color: "var(--accent-neon-blue)"
   },
@@ -16,6 +17,7 @@ const educationData = [
     institution: "Higher Secondary (Class 12)",
     degree: "Science Stream",
     description: "Major subjects: Physics, Mathematics, and Computer Science. Built a strong analytical and logical foundation.",
+    marks: "Secured 72% in Boards",
     icon: <BookOpen size={24} />,
     color: "var(--accent-violet)"
   },
@@ -75,6 +77,11 @@ const Education = () => {
                 <div className="edu-content">
                   <h4 className="edu-degree" style={{ color: item.color }}>{item.degree}</h4>
                   <p className="edu-description">{item.description}</p>
+                  {item.marks && (
+                    <p className="edu-marks" style={{ color: item.color, marginTop: '0.8rem', fontWeight: '600' }}>
+                      {item.marks}
+                    </p>
+                  )}
                 </div>
               </div>
             </motion.div>
