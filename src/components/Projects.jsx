@@ -81,29 +81,29 @@ const ProjectCard = ({ project, index }) => {
   const fragmentProgress = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
 
   return (
-    <motion.div 
+    <motion.div
       ref={ref}
       className={`project-row ${isEven ? 'row-even' : 'row-odd'}`}
       style={{ opacity, y, scale, transformPerspective: 1200 }}
     >
       <div className="project-content">
-        <motion.h3 
+        <motion.h3
           className="project-title text-gradient"
           style={{ x: titleX, opacity: titleOpacity }}
         >
           {project.title}
         </motion.h3>
-        <motion.p 
+        <motion.p
           className="project-desc"
           style={{ x: descX, opacity: descOpacity }}
         >
           {project.description}
         </motion.p>
-        
+
         <motion.div className="tech-tags" style={{ y: tagsY, opacity: tagsOpacity }}>
           {project.tech.map(t => <span key={t} className="tech-tag">{t}</span>)}
         </motion.div>
-        
+
         <motion.div className="project-actions" style={{ opacity: actionsOpacity }}>
           {project.links.live && (
             <a href={project.links.live} className="btn-link" target="_blank" rel="noreferrer">
@@ -122,7 +122,7 @@ const ProjectCard = ({ project, index }) => {
           )}
         </motion.div>
       </div>
-      
+
       <div className="project-image-container">
         {/* 64-piece shard explosion */}
         <div className="shards-overlay">
@@ -135,11 +135,11 @@ const ProjectCard = ({ project, index }) => {
             />
           ))}
         </div>
-        
+
         {/* Base image hides instantly when snap starts */}
-        <motion.img 
-          src={project.image} 
-          alt={project.title} 
+        <motion.img
+          src={project.image}
+          alt={project.title}
           className="project-img-base"
           style={{ opacity: baseImgOpacity }}
         />
@@ -279,23 +279,23 @@ const Projects = () => {
       id: 1,
       title: 'PRACTO',
       description: 'A dedicated platform for booking and managing doctor appointments with ease.',
-      tech: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-      links: { github: 'https://github.com/Krishnasolanki5383/ASM6', live: 'https://illustrious-bonbon-b2a4dd.netlify.app/', youtube: 'https://youtu.be/iG_DeVgi8vk' },
+      tech: ['React', 'JS', 'Tailwind'],
+      links: { github: 'https://github.com/Krishnasolanki5383/ASM6', live: 'https://practo-alpha.vercel.app/', youtube: 'https://youtu.be/iG_DeVgi8vk' },
       image: 'https://i.ibb.co/9mbrvRDz/Screenshot-2026-03-18-003123.png',
     },
     {
       id: 2,
-      title: 'HARIO',
-      description: 'A corporate web presence designed for a premier Japanese glass-making company.',
-      tech: ['Next.js', 'Python', 'Tailwind'],
-      links: { github: 'https://github.com/Krishnasolanki5383/ASM4', live: 'https://charming-vacherin-c87cc3.netlify.app/', youtube: 'https://youtu.be/VJaul0uhjEY' },
-      image: 'https://i.ibb.co/4nzZ0zWP/Screenshot-2026-03-18-004201.png',
+      title: 'India Pincode',
+      description: 'A full-stack application providing comprehensive district pincode information across India.',
+      tech: ['React', 'Node.js', 'MongoDB', 'JS'],
+      links: { github: 'https://github.com/Krishnasolanki5383/India-pincode', live: 'https://india-pincode.vercel.app/dashboard' },
+      image: 'https://i.ibb.co/twb6gNQ/India-pincode.png',
     },
     {
       id: 3,
       title: 'LIQUID DEATH',
       description: 'An edgy and bold promotional front-end for a high-intensity energy drink brand.',
-      tech: ['Socket.io', 'React', 'Express'],
+      tech: ['React', 'JS', 'Tailwind'],
       links: { github: 'https://github.com/Krishnasolanki5383/ASM3', live: 'https://deft-frangipane-01e606.netlify.app/', youtube: 'https://youtu.be/_gtIeCEdq4Y' },
       image: 'https://i.ibb.co/0V8PHzmp/Screenshot-2026-03-18-004530.png',
     },
@@ -303,7 +303,7 @@ const Projects = () => {
       id: 4,
       title: 'WIX',
       description: 'A supportive and informative resource platform built specifically for pregnant women.',
-      tech: ['Vue.js', 'Docker', 'Go'],
+      tech: ['React', 'JS', 'Tailwind'],
       links: { github: 'https://github.com/Krishnasolanki5383/Diwali-A2', live: 'https://www.wix.com/website-template/view/html/2573', youtube: 'https://youtu.be/xOiM0wMpQuk' },
       image: 'https://i.ibb.co/355mbC4D/Screenshot-2026-03-18-004754.png',
     },
@@ -311,7 +311,7 @@ const Projects = () => {
       id: 5,
       title: 'Micromax',
       description: 'A modern e-commerce platform and official storefront for a leading mobile phone company.',
-      tech: ['React', 'JavaScript', 'CSS'],
+      tech: ['React', 'JS', 'Tailwind'],
       links: { github: 'https://github.com/Krishnasolanki5383/Micromax-clone', live: 'https://bright-nougat-d02539.netlify.app/', youtube: 'https://youtu.be/zdemZ_WcXgU' },
       image: 'https://i.ibb.co/cc9L7f1Y/Screenshot-2026-03-18-005803.png',
     }
@@ -320,7 +320,7 @@ const Projects = () => {
   return (
     <section id="projects" className="projects-section">
       <div className="container">
-        <motion.div 
+        <motion.div
           className="section-header"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
