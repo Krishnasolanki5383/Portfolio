@@ -48,7 +48,7 @@ const Hero = () => {
               View Work <ArrowRight size={18} />
             </a>
             <a 
-              href="https://drive.google.com/file/d/1a2yE6BzKJn9YA0MJP8x3e1EyqKEdCi2O/view?usp=sharing" 
+              href="/resume_krishna.pdf" 
               target="_blank" 
               rel="noreferrer" 
               className="btn btn-secondary glass"
