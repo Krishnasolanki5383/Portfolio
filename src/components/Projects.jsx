@@ -289,7 +289,7 @@ const Projects = () => {
       description: 'A full-stack application providing comprehensive district pincode information across India.',
       tech: ['React', 'Node.js', 'MongoDB', 'JS'],
       links: { github: 'https://github.com/Krishnasolanki5383/India-pincode', live: 'https://india-pincode.vercel.app/dashboard' },
-      image: 'https://i.ibb.co/twb6gNQ/India-pincode.png',
+      image: 'https://i.ibb.co/7xGDPTjz/PINCODE-pic.png',
     },
     {
       id: 3,
